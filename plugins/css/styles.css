@@ -17,6 +17,9 @@ html {
 
 body {
     background-color: #343537;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 /* NAVBAR */
@@ -53,6 +56,7 @@ body {
 .jumbotron h1 {
     font-family: 'Segoe UI';
     font-size: 5.5vw;
+    animation: transitionIn 3s;
 }
 
 .jumbotron p.lead{
@@ -61,6 +65,7 @@ body {
     color: #848787;
     margin-top: 15px;
     margin-bottom: 15px;
+    animation: transitionIn 3s;
 }
 
 .jumbotron .btn{
@@ -70,30 +75,34 @@ body {
     background: #343537;
     box-shadow:  4px 4px 5px rgb(38, 38, 39),
                  -1px -1px 6px rgba(197, 195, 195, 0.5);
+    animation: transitionIn 3s;
 }
 
 .jumbotron h4{
     color: #848787;
+    animation: transitionIn 3s;
 }
 
 .jumbotron .social-media a{
     font-size: 40px;
+    animation: transitionIn 3s;
 }
 
 .jumbotron .border{
     padding: 30px 60px 0 60px;
     border-color: #848787 !important;
-    width: 350px;
-    margin-left: auto;
+    width: 100%;
+    animation: transitionIn 3s;
 }
 .jumbotron .col-md-5 img.img-header{
     width: 100%;
     z-index: 3;
     position: relative;
+    animation: transitionIn 3s;
 }
-.jumbotron section{
+/* .jumbotron section{
     position: relative;
-}
+} */
 .typed-cursor {
     color: #10A499;
     font-size: 2vw;
@@ -112,23 +121,20 @@ body {
     z-index: -1;
 }
 
-.about .my-photo{
-    width: 350px;
-    height: 350px;
-    overflow: hidden;
-    border-radius: 50%;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
-.about .my-photo .img-about{
-    height: 100%;
-    width: auto;
-    filter: grayscale(100%);
-}
-
 .about .row{
     margin-bottom: 30px;
+}
+
+.about .img-place {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.about .img-place img {
+    filter: grayscale(100%);
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
 }
 
 .about .info{
@@ -310,5 +316,21 @@ ul.timeline > li p{
 @media screen and (max-width: 770px){
     .jumbotron .border{
         margin: auto;
+    }
+    .jumbotron .col-md-5 .border {
+        width: 95% !important;
+        margin-top: 40px !important;
+    }
+    .skills object {
+        width: 50% !important;
+    }
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
